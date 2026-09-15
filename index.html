@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>刚学家 - 测测你的懂刚程度</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main id="app">
+    <section id="startScreen" class="screen start-screen">
+      <div class="start-photo"></div>
+      <div class="start-overlay"></div>
+      <div class="start-content">
+        <p class="eyebrow">GANGOLOGY / FIELD TEST 001</p>
+        <h1>刚学家</h1>
+        <p class="tagline">测测你的懂刚程度</p>
+        <p class="intro">十道选择题，六维行为画像。<br />看看你的体内，究竟藏了多少刚杂味。</p>
+        <button id="startBtn" class="primary-btn">开始测评 <span>→</span></button>
+        <p class="disclaimer">朋友间娱乐测试 · 结果仅供娱乐</p>
+      </div>
+      <div class="corner-stamp">THIS IS A<br /><strong>GANG TEST</strong></div>
+    </section>
+
+    <section id="questionScreen" class="screen question-screen hidden">
+      <header class="question-header">
+        <div class="brand-mini">刚学家 <span>/ 测评中</span></div>
+        <div class="progress-wrap"><span id="progressText">01 / 10</span><div class="progress"><i id="progressBar"></i></div></div>
+      </header>
+      <div class="question-layout">
+        <div class="question-index" id="questionIndex">01</div>
+        <div class="question-main">
+          <p class="question-kicker">选择最像你的答案</p>
+          <h2 id="questionText"></h2>
+          <img id="questionImage" class="question-image hidden" alt="题目配图" />
+          <div id="options" class="options"></div>
+          <div class="question-actions">
+            <button id="backBtn" class="ghost-btn">← 上一题</button>
+            <button id="nextBtn" class="primary-btn" disabled>下一题 <span>→</span></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="resultScreen" class="screen result-screen hidden">
+      <div id="resultBackdrop" class="result-backdrop"></div>
+      <div class="result-shell">
+        <header class="result-header"><span>刚学家 / RESULT REPORT</span><span id="resultNumber">REPORT 06</span></header>
+        <div class="result-grid">
+          <div class="result-visual"><img id="resultImage" alt="结果图" /><div id="featureBurst" class="feature-burst"></div></div>
+          <div class="result-copy">
+            <p class="eyebrow">你的懂刚程度</p>
+            <div class="score-line"><strong id="scoreValue">0%</strong><span>相似度</span></div>
+            <h2 id="resultTitle"></h2>
+            <p id="resultSummary" class="result-summary"></p>
+            <div class="result-actions"><button id="saveBtn" class="primary-btn">保存结果图 <span>↓</span></button><button id="retryBtn" class="ghost-btn">再测一次</button></div>
+          </div>
+        </div>
+        <div class="report-strip"><div><span class="section-label">刚学报告</span><p id="reportText"></p></div><div class="quote-box"><span class="section-label">本轮语录</span><p id="quoteText"></p></div></div>
+        <div class="evidence-section"><div class="chart-heading"><span>行为证据回放</span><small>你刚才亲自选的</small></div><div id="evidenceList" class="evidence-list"></div></div>
+        <div class="chart-section"><div class="chart-heading"><span>六维刚杂分布</span><small>数值越高，刚杂味越足</small></div><div class="chart-wrap"><canvas id="radarCanvas" width="620" height="500"></canvas><div id="axisLabels" class="axis-labels"></div></div></div>
+        <div class="dimension-section"><div class="chart-heading"><span>六维逐项点评</span><small>每一项都有证据</small></div><div id="dimensionList" class="dimension-list"></div></div>
+        <div class="stats-section"><div class="stat-card"><span>队友生存率</span><strong id="survivalStat">0%</strong></div><div class="stat-card"><span>耳机归还率</span><strong id="headphoneStat">未知</strong></div><div class="stat-card"><span>分期执行天数</span><strong id="installmentStat">0 天</strong></div><div class="stat-card"><span>包点坚守时长</span><strong id="siteStat">待统计</strong></div></div>
+        <div class="next-rank"><div><span class="section-label">下一阶段</span><p id="nextRankText"></p></div><div class="rank-track"><i id="rankProgress"></i></div></div>
+        <p class="footer-note">本测试为朋友间娱乐测评 · 看到这里说明你已经很懂刚了</p>
+      </div>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
